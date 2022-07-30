@@ -6,16 +6,15 @@ names[2] = "Ручка шариковая синяя";
 
 // цены на товар
 let prices = [];
-
 prices[0] = 280.25; // Бумага офисная А4, 80 г/м2, 500 л
 prices[1] = 56; // Биндеры для бумаги 51 мм
 prices[2] = 12.5; // Ручка шариковая синяя
-
+let count = [];
 initCountArray();
 calculateSum();
 
+
 function initCountArray() {
-    let count = [];
     for (let i = 0; i < names.length; i++) {
     const productName = names[i];
     let counttoBuy = +prompt("Укажите количество для " + productName);
