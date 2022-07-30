@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>myFilter</title>
+  </head>
+  <body>
+    <script>
+      function myFilter(fn) {
+        let data = [1, 2, 3, 8, 8, 7, 9, 1, 0, 10, 11, 1116, 7];
+        let result = [];
+
+        for (let i = 0; i < data.length; i++) {
+          if (fn(data[i]) === true) {
+            result.push(data[i]);
+          }
+        }
+        return result;
+      }
+
+      // Можем вводить свою callback ф-ю для задания логики сортировки массива (значение = 1, 10; значение > или < определенного и т.д.)
+      function fn1(x) {
+        return x > 10; // как пример
+      }
+
+      console.log(myFilter(fn1)); // получение массива со значениями > 10
+    </script>
+  </body>
+</html>
