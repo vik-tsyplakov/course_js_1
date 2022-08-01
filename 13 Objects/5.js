@@ -435,3 +435,67 @@
             favoriteFruit: 'apple'
         }
 ];
+console.log(`Первое задание`);
+for (const user of users) {
+    console.log(user.email);
+}
+console.log(" ");
+
+console.log(`Второе задание`);
+let friendsQty = [];
+for (i = 0; i < users.length; i++) {
+    const user = users[i];
+    friendsQty.push(user.friends.length);
+    /*finding max q-ty of friends*/
+    let max = Number.MIN_VALUE;
+    for (let index = 0; index < friendsQty.length; index++) {
+        const element = friendsQty[index];
+        if (element > max) {
+          max = element;
+        }
+    }
+    if (user.friends.length == max) {
+        console.log(`Пользователей с наибольшим количеством друзей = ${max} ` + user.name.first + " " + user.name.last);
+    }
+}
+console.log(friendsQty);
+console.log(" ");
+
+console.log(`Третье задание`);
+let userBalance = [];
+for (const user of users) {
+    userBalance.push(+user.balance);
+}
+
+/*finding min user balance*/
+let min = Number.MAX_VALUE;
+for (let index = 0; index < userBalance.length; index++) {
+    const element = userBalance[index];
+    if (element < min) {
+        min = element;
+    }
+}
+
+/*finding max user balance*/
+let max = Number.MIN_VALUE;
+for (let index = 0; index < userBalance.length; index++) {
+    const element = userBalance[index];
+    if (element > max) {
+        max = element;
+    }
+}
+
+console.log(userBalance);
+console.log(`Минимальный баланс = ${min}`);
+console.log(`Максимальный баланс = ${max}`);
+
+
+for (const user of users) {
+    if (user.balance == max) {
+    console.log(`Компания пользователя с наибольшим балансом ${user.company} = ${user.balance}`);
+    }
+    else if (user.balance == min) {
+    console.log(`Компания пользователя с наибольшим балансом ${user.company} = ${user.balance}`);
+    }
+}
+
