@@ -234,5 +234,7 @@ let users = [
 ];
 
 for (const user of users) {
-        console.log(user.name + " from " + user.address.city);
+    if (user.company.name == "Keebler LLC") {
+        console.log(user.name + " from " + user.address.city + " working at " + user.company.name);
+    }
 }
