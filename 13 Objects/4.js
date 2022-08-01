@@ -27,3 +27,8 @@ let user = {
     ],
     favoriteFruit: 'strawberry'
 }
+
+console.log(user.name.first + " " + user.name.last);
+user.balance = '$2000';
+delete user.email;
+console.log(user);
