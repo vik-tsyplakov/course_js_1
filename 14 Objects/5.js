@@ -480,12 +480,39 @@ function showMinMaxBalance() {
         .forEach(user => console.log(user.company));
 }
 
-function showMostFavoritedFruit()
-{
-    
+function showMostFavoritedFruit() {
+    let counters = {}; // создаем пустой объект, данный объект будет использоваться для подсчёта количества популярных фруктов
+    // имя свойства соотвествует имени фрукта, значение свойства, количество раз сколько этот фрукт встречался в популярных
+
+    // для каждого элемента массива выполняем указанную функцию
+    users.forEach(user => {
+        // если свойсва с именем, например, counters["apple"] есть увеличиваем его значение
+        if (counters[user.favoriteFruit]) {
+            counters[user.favoriteFruit]++;
+        }
+        else { // если свойства нет создаем его присваивая значение 1
+            counters[user.favoriteFruit] = 1;
+        }
+    });
+
+    let maxCount = Number.MIN_VALUE;
+    let favoriteFruit = "";
+    for (const key in counters) { // цикл for in позволяет перебрать все свойства которые есть в объетке
+        if(counters[key] > maxCount) {
+            maxCount = counters[key]; // запоминаем максимальное значение
+            favoriteFruit = key; // и запоминаем название фрукта, который был связан с этим максимальным значением
+        }
+    }
+
+    // после завершения цикла в переменной favoriteFruit 
+    console.log(favoriteFruit + " чаще всего указан как любимый фрукт")
 }
+
 
 showAllEmails();
 showHigestFriendCount();
 showMinMaxBalance();
 showMostFavoritedFruit();
+
+
+
