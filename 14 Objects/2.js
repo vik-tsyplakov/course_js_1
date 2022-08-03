@@ -7,3 +7,10 @@ let user = {
     friends: 5,
     favoriteFruit: "strawberry",
 };
+
+for (const key in user) {
+    if (typeof user[key] == 'string') {
+        console.log(`Ключ ${key} = ${user[key]}`);
+    }
+    
+}
