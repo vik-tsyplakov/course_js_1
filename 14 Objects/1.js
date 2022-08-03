@@ -3,9 +3,21 @@ let obj1 = {
     lastName: "Ivanov",
 
     print: function (obj) {
-        console.log("First Name: " + obj1.firstName);
-        console.log("Last Name: " + obj1.lastName);
+        console.log("First Name: " + this.firstName);
+        console.log("Last Name: " + this.lastName);
     }
 };
 
 obj1.print();
+
+let obj2 = {
+    firstName: "Petr",
+    lastName: "Petrov",
+
+    print: function (obj) {
+        console.log("First Name: " + this.firstName);
+        console.log("Last Name: " + this.lastName);
+    }
+};
+
+obj2.print();
